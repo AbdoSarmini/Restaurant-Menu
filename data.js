@@ -8,6 +8,7 @@ const categories = [
 
 const menuItems = [
   {
+    id: 1,
     title: "Bruschetta",
     description: "Toasted bread topped with fresh tomatoes, basil, and garlic.",
     price: "$6.99",
@@ -15,6 +16,7 @@ const menuItems = [
     categoryId: 1,
   },
   {
+    id: 2,
     title: "Stuffed Mushrooms",
     description: "Mushrooms stuffed with a savory blend of cheese and herbs.",
     price: "$8.99",
@@ -22,6 +24,7 @@ const menuItems = [
     categoryId: 1,
   },
   {
+    id: 3,
     title: "Mozzarella Sticks",
     description: "Fried mozzarella served with marinara dipping sauce.",
     price: "$7.99",
@@ -29,6 +32,7 @@ const menuItems = [
     categoryId: 1,
   },
   {
+    id: 4,
     title: "Fried Calamari",
     description: "Crispy calamari served with lemon wedges and marinara.",
     price: "$12.99",
@@ -36,6 +40,7 @@ const menuItems = [
     categoryId: 1,
   },
   {
+    id: 5,
     title: "Garlic Bread",
     description: "Warm bread toasted with garlic butter.",
     price: "$4.99",
@@ -43,6 +48,7 @@ const menuItems = [
     categoryId: 1,
   },
   {
+    id: 6,
     title: "Chicken Wings",
     description: "Spicy wings served with blue cheese dressing.",
     price: "$10.99",
@@ -50,6 +56,7 @@ const menuItems = [
     categoryId: 1,
   },
   {
+    id: 7,
     title: "Spinach Artichoke Dip",
     description:
       "Creamy dip with spinach and artichokes served with tortilla chips.",
@@ -57,8 +64,8 @@ const menuItems = [
     image: "/images/7",
     categoryId: 1,
   },
-
   {
+    id: 8,
     title: "Caesar Salad",
     description: "Romaine lettuce, croutons, parmesan, and Caesar dressing.",
     price: "$8.99",
@@ -66,6 +73,7 @@ const menuItems = [
     categoryId: 2,
   },
   {
+    id: 9,
     title: "Greek Salad",
     description: "Fresh vegetables, olives, feta cheese, and Greek dressing.",
     price: "$9.99",
@@ -73,6 +81,7 @@ const menuItems = [
     categoryId: 2,
   },
   {
+    id: 10,
     title: "House Salad",
     description:
       "Mixed greens with tomatoes, cucumbers, and choice of dressing.",
@@ -81,6 +90,7 @@ const menuItems = [
     categoryId: 2,
   },
   {
+    id: 11,
     title: "Caprese Salad",
     description: "Tomatoes, fresh mozzarella, basil, and balsamic glaze.",
     price: "$7.99",
@@ -88,6 +98,7 @@ const menuItems = [
     categoryId: 2,
   },
   {
+    id: 12,
     title: "Cobb Salad",
     description: "Mixed greens with chicken, bacon, avocado, and blue cheese.",
     price: "$12.99",
@@ -95,6 +106,7 @@ const menuItems = [
     categoryId: 2,
   },
   {
+    id: 13,
     title: "Tuna Salad",
     description: "Fresh tuna with greens, onions, and vinaigrette.",
     price: "$11.99",
@@ -102,14 +114,15 @@ const menuItems = [
     categoryId: 2,
   },
   {
+    id: 14,
     title: "Grilled Chicken Salad",
     description: "Grilled chicken served on a bed of fresh greens.",
     price: "$10.99",
     image: "/images/14",
     categoryId: 2,
   },
-
   {
+    id: 15,
     title: "Spaghetti Bolognese",
     description: "Pasta topped with a rich meat sauce.",
     price: "$14.99",
@@ -117,6 +130,7 @@ const menuItems = [
     categoryId: 3,
   },
   {
+    id: 16,
     title: "Chicken Parmesan",
     description: "Breaded chicken breast with marinara and mozzarella.",
     price: "$16.99",
@@ -124,6 +138,7 @@ const menuItems = [
     categoryId: 3,
   },
   {
+    id: 17,
     title: "Grilled Salmon",
     description: "Perfectly grilled salmon with lemon butter.",
     price: "$19.99",
@@ -131,6 +146,7 @@ const menuItems = [
     categoryId: 3,
   },
   {
+    id: 18,
     title: "Vegetable Stir Fry",
     description: "A medley of fresh vegetables stir-fried in a savory sauce.",
     price: "$13.99",
@@ -138,6 +154,7 @@ const menuItems = [
     categoryId: 3,
   },
   {
+    id: 19,
     title: "Beef Tenderloin",
     description: "Juicy tenderloin served with mashed potatoes.",
     price: "$22.99",
@@ -145,6 +162,7 @@ const menuItems = [
     categoryId: 3,
   },
   {
+    id: 20,
     title: "Lamb Chops",
     description: "Grilled lamb chops with rosemary sauce.",
     price: "$24.99",
@@ -152,14 +170,15 @@ const menuItems = [
     categoryId: 3,
   },
   {
+    id: 21,
     title: "Chicken Alfredo",
     description: "Creamy pasta with grilled chicken and Alfredo sauce.",
     price: "$15.99",
     image: "/images/21",
     categoryId: 3,
   },
-
   {
+    id: 22,
     title: "Cheesecake",
     description: "Rich and creamy cheesecake topped with strawberry sauce.",
     price: "$6.99",
@@ -167,6 +186,7 @@ const menuItems = [
     categoryId: 4,
   },
   {
+    id: 23,
     title: "Tiramisu",
     description: "Classic Italian dessert with layers of coffee-soaked cake.",
     price: "$7.99",
@@ -174,6 +194,7 @@ const menuItems = [
     categoryId: 4,
   },
   {
+    id: 24,
     title: "Chocolate Lava Cake",
     description: "Warm chocolate cake with a molten center.",
     price: "$8.99",
@@ -181,6 +202,7 @@ const menuItems = [
     categoryId: 4,
   },
   {
+    id: 25,
     title: "Gelato",
     description: "Italian-style ice cream with a variety of flavors.",
     price: "$5.99",
@@ -188,6 +210,7 @@ const menuItems = [
     categoryId: 4,
   },
   {
+    id: 26,
     title: "Apple Pie",
     description: "Classic apple pie with a buttery crust.",
     price: "$4.99",
@@ -195,6 +218,7 @@ const menuItems = [
     categoryId: 4,
   },
   {
+    id: 27,
     title: "Crème Brûlée",
     description: "Creamy custard with a caramelized sugar top.",
     price: "$7.49",
@@ -202,14 +226,15 @@ const menuItems = [
     categoryId: 4,
   },
   {
+    id: 28,
     title: "Panna Cotta",
     description: "Vanilla-flavored Italian dessert served with berry compote.",
     price: "$6.49",
     image: "/images/28",
     categoryId: 4,
   },
-
   {
+    id: 29,
     title: "Coffee",
     description: "Freshly brewed coffee served hot.",
     price: "$2.99",
@@ -217,6 +242,7 @@ const menuItems = [
     categoryId: 5,
   },
   {
+    id: 30,
     title: "Iced Tea",
     description: "Refreshing iced tea with lemon.",
     price: "$2.49",
@@ -224,6 +250,7 @@ const menuItems = [
     categoryId: 5,
   },
   {
+    id: 31,
     title: "Lemonade",
     description: "Freshly squeezed lemonade.",
     price: "$3.49",
@@ -231,6 +258,7 @@ const menuItems = [
     categoryId: 5,
   },
   {
+    id: 32,
     title: "Soda",
     description: "Choose from a variety of sodas.",
     price: "$1.99",
@@ -238,6 +266,7 @@ const menuItems = [
     categoryId: 5,
   },
   {
+    id: 33,
     title: "Milkshake",
     description: "Thick and creamy milkshake in vanilla or chocolate.",
     price: "$4.99",
@@ -245,6 +274,7 @@ const menuItems = [
     categoryId: 5,
   },
   {
+    id: 34,
     title: "Wine",
     description: "Select from a fine range of red and white wines.",
     price: "$7.99",
@@ -252,6 +282,7 @@ const menuItems = [
     categoryId: 5,
   },
   {
+    id: 35,
     title: "Beer",
     description: "Variety of craft beers available.",
     price: "$5.49",

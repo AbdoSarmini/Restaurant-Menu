@@ -1,0 +1,51 @@
+
+.menuItem{
+  display: flex;
+  flex-direction: row;
+  height: 100px;
+  /* width: 475px; */
+  background-color: var(--base-variant);
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+.menuItem img{
+  border-radius: 12px 0px 0px 12px;
+  width: 175px;
+  object-fit: cover;
+}
+
+.menuContent h2{
+  font-size: 20px;
+  margin: 0px 0px;
+}
+
+.menuDesc{
+  margin: 0;
+}
+
+.menuContent{
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  margin: 0px 20px;
+  align-items: center;
+  height: 100%;
+}
+
+.menuItem .linkButton{
+  background-color: #a02c2c;
+  color: white;
+}
+
+
+.menuContent > :last-child{
+
+  display:flex;
+  gap: 10px;
+
+  /* justify-content: start; */
+  align-items: center;
+  margin-top: 0;
+  margin-left: auto;
+}

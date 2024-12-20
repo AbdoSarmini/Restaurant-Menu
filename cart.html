@@ -7,6 +7,7 @@
 
     <!-- Load  Gloabl CSS -->
     <link rel="stylesheet" href="./css/global.css" />
+    <link rel="stylesheet" href="./css/cart.css" />
 
     <!-- Load Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -36,7 +37,7 @@
           <h1>Bistro Menu</h1>
         </a>
         <!-- Cart Button -->
-        <a class="cartButton" href="/cart.html">
+        <a class="cartButton" href="/cart">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             height="24px"
@@ -53,29 +54,12 @@
     </header>
 
     <!-- Main -->
-
     <main>
-      <!-- Categories Filter Bar -->
-      <div class="categorisFilter">
-        <input
-          type="radio"
-          name="category"
-          onchange="onCategoryChange()"
-          value="all"
-          id="all"
-          checked
-        />
-        <label class="categoryButton" for="all">All Items</label>
-      </div>
-      <br />
-
-      <!-- Menu Items -->
-      <div class="itemsContainer"></div>
+      <h1>Cart Items</h1>
+      <div class="cartItemsContainer"></div>
     </main>
 
     <!-- Scripts -->
-    <script src="./data.js"></script>
-    <script src="./js/home.js"></script>
     <script src="./js/cart.js"></script>
   </body>
 </html>

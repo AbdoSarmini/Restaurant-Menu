@@ -15,7 +15,7 @@ var itemsToRender = menuItems;
 function renderItems() {
   var itemsContainer = document.getElementsByClassName("itemsContainer")[0];
   itemsContainer.innerHTML = "";
-  itemsToRender.forEach((item) => {
+  itemsToRender.forEach((item, index) => {
     //   var button = document.createElement("button");
     itemsContainer.insertAdjacentHTML(
       "beforeend",
@@ -30,7 +30,7 @@ function renderItems() {
             </p>
             <div class="menuItemFooter">
               <h3 class="price">${item.price}</h3>
-              <a class="linkButton" href="#">Add To Cart</a>
+              <button onclick="onAddToCart(${item.id})" class="linkButton" href="#">Add To Cart</button>
             </div>
           </div>
         </div>
