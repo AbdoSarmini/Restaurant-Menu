@@ -31,6 +31,17 @@
   margin: 0px 20px;
   align-items: center;
   height: 100%;
+  gap: 4px;
+}
+
+.counterButton{
+  border: none;
+  border-radius: 100%;
+  background-color: var(--base-color);
+  color: white;
+  width: 20px;
+  cursor: pointer;
+  height: 20px;
 }
 
 .menuItem .linkButton{
@@ -48,4 +59,10 @@
   align-items: center;
   margin-top: 0;
   margin-left: auto;
+}
+
+.countInput{
+  width: 40px;
+  text-align: center;
+  border-radius: 5px;
 }
