@@ -20,7 +20,7 @@
     <!-- Header -->
     <header>
       <div class="header">
-        <a class="textLogo" href="/">
+        <a class="textLogo" href="">
           <!-- Logo -->
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -55,17 +55,30 @@
     <!-- Main -->
 
     <main>
-      <!-- Categories Filter Bar -->
-      <div class="categorisFilter">
-        <input
-          type="radio"
-          name="category"
-          onchange="onCategoryChange()"
-          value="all"
-          id="all"
-          checked
-        />
-        <label class="categoryButton" for="all">All Items</label>
+      <div class="filters">
+        <!-- Categories Filter Bar -->
+        <div class="categorisFilter">
+          <input
+            type="radio"
+            name="category"
+            onchange="onCategoryChange()"
+            value="all"
+            id="all"
+            checked
+          />
+          <label class="categoryButton" for="all">All Items</label>
+        </div>
+        <!-- Search Bar -->
+        <div class="search">
+          <input
+            type="search"
+            class="searchInput"
+            name="search"
+            placeholder="Search..."
+            oninput="onSearch()"
+            id=""
+          />
+        </div>
       </div>
       <br />
 

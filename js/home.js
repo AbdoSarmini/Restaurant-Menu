@@ -51,3 +51,13 @@ function onCategoryChange() {
   }
   renderItems();
 }
+
+function onSearch() {
+  var searchValue = document.querySelector('input[name="search"]').value;
+  itemsToRender = menuItems.filter((item) =>
+    item.title.toLowerCase().includes(searchValue.toLowerCase())
+  );
+  renderItems();
+
+  document.getElementById("all").checked = true;
+}

@@ -88,9 +88,25 @@ main{
   display: flex;
   flex-wrap: wrap;
   gap: 5px;
+  
+}
+
+.filters{
+  display: flex;
+  flex-wrap: wrap;
   padding: 20px 0px;
   border-bottom: 2px solid var(--base-variant);
+  justify-content: space-between;
+  align-items: center;
+}
 
+.searchInput{
+  border-radius: 16px;
+  padding: 15px;
+  width: 250px;
+  height: 35px;
+  border: none;
+  outline: none;
 }
 
 .categoryButton{
