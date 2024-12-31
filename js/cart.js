@@ -12,15 +12,64 @@ function onAddToCart(id) {
     (cartItem) => cartItem.id == itemToAdd.id
   );
   if (indexOfOldItem != -1) {
-    console.log(indexOfOldItem);
+    var item = cart[indexOfOldItem];
 
-    cart[indexOfOldItem].count = parseInt(cart[indexOfOldItem].count) + 1;
-    console.log("un update" + cart[indexOfOldItem]);
+    item.count = parseInt(item.count) + 1;
+    item.totalPrice = getTotalPrice(item);
+    console.log("un update" + item);
   } else {
+    itemToAdd.totalPrice = getTotalPrice(itemToAdd);
     cart.push(itemToAdd);
+    console.log(itemToAdd);
+
     console.log("un new" + itemToAdd);
   }
   localStorage.setItem("cartItems", JSON.stringify(cart));
+
+  showNotification(itemToAdd.title);
+}
+
+function showNotification(itemTitle) {
+  const container = document.getElementById("notificationContainer");
+
+  removeOldNotification();
+
+  // Create a new notification
+  const newNotification = document.createElement("div");
+  newNotification.classList.add("notification");
+  newNotification.textContent = `"${itemTitle}" has ben added to the cart`;
+
+  // Append it to the container
+  container.appendChild(newNotification);
+
+  // Trigger the show animation
+  setTimeout(() => newNotification.classList.add("visible"), 10);
+  setTimeout(removeNewNotification, 3000);
+
+  function removeOldNotification() {
+    const oldNotification = document.querySelector(".notification");
+    if (oldNotification) {
+      console.log("remove");
+
+      oldNotification.classList.remove("visible");
+      // Wait for the animation to complete before removing the element
+      oldNotification.addEventListener(
+        "transitionend",
+        () => oldNotification.remove(),
+        { once: true }
+      );
+    }
+  }
+
+  function removeNewNotification() {
+    newNotification.classList.remove("visible");
+    // Wait for the animation to complete before removing the element
+    newNotification.addEventListener(
+      "transitionend",
+      () => newNotification.remove(),
+      { once: true }
+    );
+  }
 }
 
 function loadCartItemsFromStorage() {
@@ -34,17 +83,22 @@ function deleteItemFromCart(index) {
   renderCartItems();
 }
 
-// function onCountChange(index) {
-//   var value = document.getElementById("countInput" + index).value;
-//   cart[index].count = value;
-//   localStorage.setItem("cartItems", JSON.stringify(cart));
-
-//   renderCartItems();
-// }
+function getTotalPrice(item) {
+  // var item = cart[index];
+  totalPrice =
+    parseFloat(item.price.substring(1, item.price.length - 1)) *
+    parseInt(item.count);
+  totalPrice = totalPrice.toFixed(2);
+  return totalPrice;
+}
 
 function decreaseCount(index) {
-  var newCount = parseInt(cart[index].count) - 1;
-  if (newCount > 0) cart[index].count = newCount;
+  var item = cart[index];
+
+  var newCount = parseInt(item.count) - 1;
+  if (newCount > 0) item.count = newCount;
+
+  item.totalPrice = getTotalPrice(item);
 
   localStorage.setItem("cartItems", JSON.stringify(cart));
 
@@ -52,7 +106,11 @@ function decreaseCount(index) {
 }
 
 function increaseCount(index) {
-  cart[index].count = parseInt(cart[index].count) + 1;
+  var item = cart[index];
+
+  // Update the total price
+  item.count = parseInt(item.count) + 1;
+  item.totalPrice = getTotalPrice(item);
 
   localStorage.setItem("cartItems", JSON.stringify(cart));
 
@@ -60,16 +118,14 @@ function increaseCount(index) {
 }
 
 function renderCartItems() {
+  var totalPrice = 0;
   var cartItemsContainer =
     document.getElementsByClassName("cartItemsContainer")[0];
   if (cartItemsContainer == undefined) return;
   cartItemsContainer.innerHTML = "";
   cart.forEach((item, index) => {
-    item.totalPrice =
-      parseFloat(item.price.substring(1, item.price.length - 1)) *
-      parseInt(cart[index].count);
+    totalPrice += parseFloat(item.totalPrice);
 
-    item.totalPrice = item.totalPrice.toFixed(2);
     cartItemsContainer.insertAdjacentHTML(
       "beforeend",
       // <input oninput="onCountChange(${index})" name="count" id="countInput${index}" class="countInput" type="number" value="${item.count}">
@@ -99,4 +155,8 @@ function renderCartItems() {
     `
     );
   });
+  totalPrice = parseFloat(totalPrice).toFixed(2);
+  document.getElementById(
+    "totalPrice"
+  ).innerText = `Total Price: $${totalPrice}`;
 }

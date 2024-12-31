@@ -176,3 +176,22 @@ input[type="radio"]:checked + label{
   align-items: center;
   margin-top: auto;
 }
+
+.notification{
+  position: fixed;
+  bottom: -100px;
+  left: 20px;
+  background-color: rgb(66, 143, 66);
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 8px;
+  transition: 100ms ease-in-out;
+  box-shadow: 0 0 20px 4px #00000059;
+
+}
+
+.notification.visible{
+  bottom: 20px;
+  transition: 500ms ease-in-out;
+
+}

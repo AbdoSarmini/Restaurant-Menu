@@ -66,3 +66,15 @@
   text-align: center;
   border-radius: 5px;
 }
+
+.cartSummary{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cartSummary h2{
+  background-color: var(--base-variant);
+  padding: 12px;
+  border-radius: 12px;
+}
