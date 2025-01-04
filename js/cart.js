@@ -3,7 +3,7 @@ var cart = [];
 loadCartItemsFromStorage();
 renderCartItems();
 
-function onAddToCart(id) {
+function onAddToCart(id, event) {
   var itemToAdd = menuItems.find((item) => item.id == id);
   itemToAdd.count = 1;
 
@@ -27,6 +27,38 @@ function onAddToCart(id) {
   localStorage.setItem("cartItems", JSON.stringify(cart));
 
   showNotification(itemToAdd.title);
+  showAnimation(event);
+}
+
+function showAnimation(event) {
+  const cart = document.querySelector(".cartButton");
+  const circle = document.createElement("div");
+  circle.classList.add("fly-circle");
+  document.body.appendChild(circle);
+
+  // Get positions relative to the document
+  const rectButton = event.target.getBoundingClientRect();
+  const rectCart = cart.getBoundingClientRect();
+
+  // Calculate positions with scroll offset
+  const buttonX = rectButton.left + rectButton.width / 2 + window.scrollX;
+  const buttonY = rectButton.top + rectButton.height / 2 + window.scrollY;
+  const cartX = rectCart.left + rectCart.width / 2 + window.scrollX;
+  const cartY = rectCart.top + rectCart.height / 2 + window.scrollY;
+
+  // Set initial position of the circle
+  circle.style.left = `${buttonX}px`;
+  circle.style.top = `${buttonY}px`;
+
+  // Calculate target offsets
+  const targetX = cartX - buttonX;
+  const targetY = cartY - buttonY;
+
+  // Set CSS variables for animation
+  circle.style.setProperty("--target-x", `${targetX}px`);
+  circle.style.setProperty("--target-y", `${targetY}px`);
+
+  circle.addEventListener("animationend", () => circle.remove());
 }
 
 function showNotification(itemTitle) {

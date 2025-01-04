@@ -30,7 +30,7 @@ function renderItems() {
             </p>
             <div class="menuItemFooter">
               <h3 class="price">${item.price}</h3>
-              <button onclick="onAddToCart(${item.id})" class="linkButton" href="#">Add To Cart</button>
+              <button onclick="onAddToCart(${item.id}, event)" class="linkButton" href="#">Add To Cart</button>
             </div>
           </div>
         </div>
