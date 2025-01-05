@@ -1,5 +1,4 @@
-
-.menuItem{
+.menuItem {
   display: flex;
   flex-direction: row;
   height: 100px;
@@ -9,22 +8,22 @@
   margin-bottom: 15px;
 }
 
-.menuItem img{
+.menuItem img {
   border-radius: 12px 0px 0px 12px;
   width: 175px;
   object-fit: cover;
 }
 
-.menuContent h2{
+.menuContent h2 {
   font-size: 20px;
   margin: 0px 0px;
 }
 
-.menuDesc{
+.menuDesc {
   margin: 0;
 }
 
-.menuContent{
+.menuContent {
   display: flex;
   width: 100%;
   flex-direction: row;
@@ -34,25 +33,23 @@
   gap: 4px;
 }
 
-.counterButton{
+.counterButton {
   border: none;
   border-radius: 100%;
   background-color: var(--base-color);
-  color: white;
+  color: var(--text-color);
   width: 20px;
   cursor: pointer;
   height: 20px;
 }
 
-.menuItem .linkButton{
+.menuItem .linkButton {
   background-color: #a02c2c;
   color: white;
 }
 
-
-.menuContent > :last-child{
-
-  display:flex;
+.menuContent > :last-child {
+  display: flex;
   gap: 10px;
 
   /* justify-content: start; */
@@ -61,19 +58,19 @@
   margin-left: auto;
 }
 
-.countInput{
+.countInput {
   width: 40px;
   text-align: center;
   border-radius: 5px;
 }
 
-.cartSummary{
+.cartSummary {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.cartSummary h2{
+.cartSummary h2 {
   background-color: var(--base-variant);
   padding: 12px;
   border-radius: 12px;

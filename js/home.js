@@ -1,5 +1,6 @@
 // Load Categories
-var categoriesContainer = document.getElementsByClassName("categorisFilter")[0];
+var categoriesContainer =
+  document.getElementsByClassName("categoriesFilter")[0];
 categories.forEach((category) => {
   //   var button = document.createElement("button");
   categoriesContainer.insertAdjacentHTML(
@@ -61,3 +62,9 @@ function onSearch() {
 
   document.getElementById("all").checked = true;
 }
+
+function updateCartButtonCount() {
+  document.getElementById("cartCount").innerText = getCartCount();
+}
+
+updateCartButtonCount();

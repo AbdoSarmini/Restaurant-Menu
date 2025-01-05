@@ -1,6 +1,7 @@
 var cart = [];
 
 loadCartItemsFromStorage();
+
 renderCartItems();
 
 function onAddToCart(id, event) {
@@ -16,13 +17,9 @@ function onAddToCart(id, event) {
 
     item.count = parseInt(item.count) + 1;
     item.totalPrice = getTotalPrice(item);
-    console.log("un update" + item);
   } else {
     itemToAdd.totalPrice = getTotalPrice(itemToAdd);
     cart.push(itemToAdd);
-    console.log(itemToAdd);
-
-    console.log("un new" + itemToAdd);
   }
   localStorage.setItem("cartItems", JSON.stringify(cart));
 
@@ -30,8 +27,19 @@ function onAddToCart(id, event) {
   showAnimation(event);
 }
 
+function getCartCount() {
+  loadCartItemsFromStorage();
+
+  totalCount = 0;
+  cart.forEach((item) => {
+    totalCount += item.count;
+  });
+
+  return totalCount;
+}
+
 function showAnimation(event) {
-  const cart = document.querySelector(".cartButton");
+  const cart = document.querySelector(".cartCount");
   const circle = document.createElement("div");
   circle.classList.add("fly-circle");
   document.body.appendChild(circle);
@@ -58,7 +66,10 @@ function showAnimation(event) {
   circle.style.setProperty("--target-x", `${targetX}px`);
   circle.style.setProperty("--target-y", `${targetY}px`);
 
-  circle.addEventListener("animationend", () => circle.remove());
+  circle.addEventListener("animationend", () => {
+    circle.remove();
+    updateCartButtonCount();
+  });
 }
 
 function showNotification(itemTitle) {
@@ -81,8 +92,6 @@ function showNotification(itemTitle) {
   function removeOldNotification() {
     const oldNotification = document.querySelector(".notification");
     if (oldNotification) {
-      console.log("remove");
-
       oldNotification.classList.remove("visible");
       // Wait for the animation to complete before removing the element
       oldNotification.addEventListener(
@@ -150,6 +159,8 @@ function increaseCount(index) {
 }
 
 function renderCartItems() {
+  updateCartButtonCount();
+
   var totalPrice = 0;
   var cartItemsContainer =
     document.getElementsByClassName("cartItemsContainer")[0];
@@ -192,3 +203,9 @@ function renderCartItems() {
     "totalPrice"
   ).innerText = `Total Price: $${totalPrice}`;
 }
+
+function updateCartButtonCount() {
+  document.getElementById("cartCount").innerText = getCartCount();
+}
+
+updateCartButtonCount();
