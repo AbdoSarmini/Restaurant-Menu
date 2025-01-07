@@ -92,7 +92,7 @@
 .counterContainer {
   display: flex;
   flex-direction: column;
-  width: 110px;
+  /* width: 110px; */
   justify-content: center;
   align-items: center;
 }
@@ -157,6 +157,10 @@
     width: 95%;
   }
 
+  .textLogo {
+    font-size: 10px;
+  }
+
   .textLogo svg,
   .themeSwitch svg {
     width: 25px;
@@ -209,7 +213,7 @@
   }
 
   .menuItemFooter p {
-    font-size: 12px;
+    font-size: 10px;
   }
 
   .cartSummary h2 {
@@ -221,5 +225,13 @@
     flex-direction: column;
     justify-content: stretch;
     align-items: stretch;
+  }
+
+  .menuContent {
+    padding: 10px 0;
+  }
+
+  .menuItem {
+    min-height: 0;
   }
 }

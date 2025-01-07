@@ -104,8 +104,8 @@
   }
 
   .categoryButton {
-    font-size: 10px;
-    padding: 4px 8px;
+    font-size: 13px;
+    /* padding: 4px 8px; */
     white-space: nowrap;
   }
 
@@ -150,5 +150,18 @@
     font-size: 12px;
     width: 25px;
     height: 25px;
+  }
+
+  .notification {
+    position: fixed;
+    bottom: -100px;
+    left: 20px;
+    background-color: rgb(66, 143, 66);
+    color: white;
+    padding: 10px;
+    font-size: 10px;
+    border-radius: 8px;
+    transition: 100ms ease-in-out;
+    box-shadow: 0 0 20px 4px #00000059;
   }
 }
