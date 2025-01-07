@@ -78,6 +78,8 @@ main {
 }
 
 .cartButton {
+  z-index: 1;
+
   position: fixed;
   bottom: 35px;
   right: 35px;
@@ -152,9 +154,17 @@ input[type="radio"]:checked + label {
 .menuItem {
   display: flex;
   flex-direction: column;
-  /* width: 475px; */
   background-color: var(--base-variant);
   border-radius: 12px;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 1s ease;
+}
+
+.menuItem.menuItemVisible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 1s ease;
 }
 
 .menuItem img {

@@ -2,7 +2,7 @@ var cart = [];
 
 loadCartItemsFromStorage();
 
-renderCartItems();
+renderCartItems(true);
 
 function onAddToCart(id, event) {
   var itemToAdd = menuItems.find((item) => item.id == id);
@@ -164,7 +164,7 @@ function increaseCount(index) {
   renderCartItems();
 }
 
-function renderCartItems() {
+function renderCartItems(isanimate = false) {
   updateCartButtonCount();
 
   var totalPrice = 0;
@@ -181,7 +181,7 @@ function renderCartItems() {
 
       `
     <div class="menuItemContainer" style="display: flex; ">
-    <div class="menuItem">
+    <div class="menuItem  ${!isanimate ? "menuItemVisible" : ""}">
     
     
           <img src="./images/placeholder.jpg" alt="" />
@@ -198,14 +198,18 @@ function renderCartItems() {
             <div>
              <button class="counterButton" onclick="decreaseCount(${index})" >-</button>
               
-              <div style="min-width:20px; text-align:center"><p> ${item.count} </p></div>
+              <div style="min-width:20px; text-align:center"><p> ${
+                item.count
+              } </p></div>
             <button class="counterButton" onclick="increaseCount(${index})" >+</button>
 
             </div>
               <p>x ${item.price} </p>
             
             </div>
-              <div class="priceContainer"><h3 class="price">$${item.totalPrice}</h3></div>
+              <div class="priceContainer"><h3 class="price">$${
+                item.totalPrice
+              }</h3></div>
             </div>
           </div>
     </div>
@@ -213,6 +217,10 @@ function renderCartItems() {
         </div>
     `
     );
+    if (isanimate) {
+      console.log("aa");
+      animate();
+    }
   });
   totalPrice = parseFloat(totalPrice).toFixed(2);
   document.getElementById(
@@ -227,3 +235,27 @@ function updateCartButtonCount() {
 }
 
 updateCartButtonCount();
+
+animate();
+document.addEventListener("scroll", animate);
+
+function animate() {
+  const items = document.querySelectorAll(".menuItem");
+
+  items.forEach((item) => {
+    const boool = item.classList.contains("menuItemVisible");
+    if (!boool && isInView(item)) {
+      item.classList.add("menuItemVisible");
+      console.log("appeared");
+    }
+  });
+}
+
+function isInView(element) {
+  const rect = element.getBoundingClientRect();
+  return (
+    rect.bottom > 0 &&
+    rect.top <
+      (window.innerHeight - 5 || document.documentElement.clientHeight - 5)
+  );
+}

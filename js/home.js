@@ -44,6 +44,7 @@ function renderItems() {
     `
     );
   });
+  animate();
 }
 
 renderItems();
@@ -74,3 +75,27 @@ function updateCartButtonCount() {
 }
 
 updateCartButtonCount();
+
+function isInView(element) {
+  const rect = element.getBoundingClientRect();
+  return (
+    rect.bottom > 0 &&
+    rect.top <
+      (window.innerHeight - 150 || document.documentElement.clientHeight - 150)
+  );
+}
+
+animate();
+document.addEventListener("scroll", animate);
+
+function animate() {
+  const items = document.querySelectorAll(".menuItem");
+
+  items.forEach((item) => {
+    const boool = item.classList.contains("menuItemVisible");
+    if (!boool && isInView(item)) {
+      item.classList.add("menuItemVisible");
+      console.log("appeared");
+    }
+  });
+}
