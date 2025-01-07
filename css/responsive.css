@@ -6,6 +6,11 @@
     gap: 15px;
   } */
 
+  .menuItem img {
+    min-height: 160px;
+    height: 160px;
+  }
+
   .menuContent h2 {
     font-size: 16px;
   }
@@ -62,6 +67,11 @@
 
 /* Mobile */
 @media (max-width: 767px) {
+  .menuItem img {
+    min-height: 95px;
+    height: 95px;
+  }
+
   .itemsContainer {
     display: grid;
     grid-template-columns: 1fr 1fr;

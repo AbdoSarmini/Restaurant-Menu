@@ -1,10 +1,6 @@
 function switchTheme() {
-  console.log("Loading theme...");
-
   const storedTheme = localStorage.getItem("darkmode");
   var darkModeEnabled = storedTheme ? storedTheme : 0;
-
-  console.log(darkModeEnabled);
 
   if (darkModeEnabled == 0) {
     localStorage.setItem("darkmode", 1);

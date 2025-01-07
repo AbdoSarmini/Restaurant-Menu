@@ -184,7 +184,7 @@ function renderCartItems(isanimate = false) {
     <div class="menuItem  ${!isanimate ? "menuItemVisible" : ""}">
     
     
-          <img src="./images/placeholder.jpg" alt="" />
+          <img src=".${item.image}" alt="" />
           <div class="menuContent">
             <div style="width:70%;">
             <h2>${item.title}</h2>
@@ -218,7 +218,6 @@ function renderCartItems(isanimate = false) {
     `
     );
     if (isanimate) {
-      console.log("aa");
       animate();
     }
   });
@@ -246,7 +245,6 @@ function animate() {
     const boool = item.classList.contains("menuItemVisible");
     if (!boool && isInView(item)) {
       item.classList.add("menuItemVisible");
-      console.log("appeared");
     }
   });
 }

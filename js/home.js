@@ -23,7 +23,7 @@ function renderItems() {
 
       `
     <div class="menuItem">
-          <img src="./images/placeholder.jpg" alt="" />
+          <img src=".${item.image}" alt="" />
           <div class="menuContent">
             <h2>${item.title}</h2>
             <p class="menuDesc">
@@ -95,7 +95,6 @@ function animate() {
     const boool = item.classList.contains("menuItemVisible");
     if (!boool && isInView(item)) {
       item.classList.add("menuItemVisible");
-      console.log("appeared");
     }
   });
 }
