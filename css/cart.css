@@ -1,8 +1,9 @@
 .menuItem {
   display: flex;
   flex-direction: row;
-  height: 100px;
-  /* width: 475px; */
+  align-items: center;
+  min-height: 100px;
+  width: 100%;
   background-color: var(--base-variant);
   border-radius: 12px;
   margin-bottom: 15px;
@@ -11,6 +12,7 @@
 .menuItem img {
   border-radius: 12px 0px 0px 12px;
   width: 175px;
+  height: 100%;
   object-fit: cover;
 }
 
@@ -46,9 +48,15 @@
 .menuItem .linkButton {
   background-color: #a02c2c;
   color: white;
+  padding: 4px;
 }
 
-.menuContent > :last-child {
+.menuItem svg {
+  margin-bottom: -6px;
+  fill: white !important;
+}
+
+.menuItemFooter {
   display: flex;
   gap: 10px;
 
@@ -74,4 +82,144 @@
   background-color: var(--base-variant);
   padding: 12px;
   border-radius: 12px;
+}
+
+.priceContainer {
+  min-width: 110px;
+  text-align: right;
+}
+
+.counterContainer {
+  display: flex;
+  flex-direction: column;
+  width: 110px;
+  justify-content: center;
+  align-items: center;
+}
+
+.counterContainer > :first-child {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+  margin: 0;
+}
+
+.counterContainer > :first-child p {
+  margin: 0;
+}
+
+.counterContainer > :last-child {
+  margin: 0;
+}
+
+/* Responsiveness */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  main {
+    width: 85%;
+  }
+
+  .menuItem img {
+    width: 140px;
+  }
+
+  .menuItem h2 {
+    font-size: 16px;
+  }
+
+  .menuDesc {
+    font-size: 13px;
+  }
+
+  .menuItemFooter {
+    flex-wrap: nowrap;
+  }
+
+  .price {
+    font-size: 18px;
+  }
+
+  .priceContainer {
+    min-width: 70px;
+  }
+
+  .cartSummary h2 {
+    font-size: 18px;
+    white-space: nowrap;
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  main {
+    width: 95%;
+  }
+
+  .textLogo svg,
+  .themeSwitch svg {
+    width: 25px;
+    height: 25px;
+  }
+
+  .cartButton svg {
+    width: 30px;
+    height: 30px;
+  }
+
+  .cartButton {
+    padding: 15px;
+  }
+
+  .cartCount {
+    font-size: 12px;
+    width: 25px;
+    height: 25px;
+  }
+
+  .menuItem img {
+    width: 75px;
+  }
+
+  .menuItem h2 {
+    font-size: 12px;
+  }
+
+  .menuDesc {
+    font-size: 9px;
+  }
+
+  .menuItemFooter {
+    flex-wrap: nowrap;
+  }
+
+  .price {
+    font-size: 12px;
+  }
+
+  .menuItemFooter {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .priceContainer {
+    min-width: 0;
+  }
+
+  .menuItemFooter p {
+    font-size: 12px;
+  }
+
+  .cartSummary h2 {
+    font-size: 18px;
+    white-space: nowrap;
+  }
+
+  .cartSummary {
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: stretch;
+  }
 }
