@@ -62,7 +62,6 @@
   display: flex;
   gap: 10px;
 
-  /* justify-content: start; */
   align-items: center;
   margin-top: 0;
   margin-left: auto;
@@ -94,7 +93,6 @@
 .counterContainer {
   display: flex;
   flex-direction: column;
-  /* width: 110px; */
   justify-content: center;
   align-items: center;
 }

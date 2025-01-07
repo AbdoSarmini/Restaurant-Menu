@@ -8,7 +8,6 @@
     <!-- Load  Gloabl CSS -->
     <link rel="stylesheet" href="./css/global.css" />
     <link rel="stylesheet" href="./css/cart.css" />
-    <!-- <link rel="stylesheet" href="./css/responsive.css" /> -->
 
     <!-- Load Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -19,6 +18,7 @@
     />
   </head>
   <body class="">
+    <!-- Theme Script -->
     <script src="./js/theme.js"></script>
 
     <!-- Header -->
@@ -39,6 +39,8 @@
           </svg>
           <h1>Bistro Menu</h1>
         </a>
+
+        <!-- Theme Switch Button -->
         <div>
           <div class="themeSwitch" onclick="switchTheme()">
             <svg
@@ -75,8 +77,11 @@
 
     <!-- Main -->
     <main>
+      <!-- Items Container -->
       <h1>Cart Items</h1>
       <div class="cartItemsContainer"></div>
+
+      <!-- Summary -->
       <div class="cartSummary">
         <p>You can show this page to the waiter to place your order.</p>
         <h2 id="totalPrice">Total Price:</h2>
@@ -84,7 +89,6 @@
     </main>
 
     <!-- Scripts -->
-
     <script src="./js/cart.js"></script>
   </body>
 </html>

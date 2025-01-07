@@ -1,3 +1,4 @@
+/* GLOABL COLORS */
 :root {
   --primary-color: #f59e0b;
   --text-color: #202020;
@@ -6,6 +7,7 @@
   --base-variant: #f1f1f1;
 }
 
+/* DARK MODE COLORS */
 .darkmode {
   --primary-color: #f59e0b;
   --text-color: #ffffff;
@@ -159,13 +161,13 @@ input[type="radio"]:checked + label {
   border-radius: 12px;
   opacity: 0;
   transform: translateY(100px);
-  transition: all 1s ease;
+  transition: 1s ease;
 }
 
 .menuItem.menuItemVisible {
   opacity: 1;
   transform: translateY(0);
-  transition: all 1s ease;
+  transition: 1s ease;
 }
 
 .menuItem img {

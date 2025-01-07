@@ -1,36 +1,43 @@
 var cart = [];
-
 loadCartItemsFromStorage();
 
+// Initial render of items on page load.
 renderCartItems(true);
 
+// When an item is added to the cart, it checks if its already
+// exist in the cart. If yes, it increases the count of it.
+// if not, it adds the new item to the cart with count of 1.
 function onAddToCart(id, event) {
+  // Gets the item from the items list (data.js)
   var itemToAdd = menuItems.find((item) => item.id == id);
   itemToAdd.count = 1;
 
-  // Find item count
+  // Check if it already exist
   var indexOfOldItem = cart.findIndex(
     (cartItem) => cartItem.id == itemToAdd.id
   );
   if (indexOfOldItem != -1) {
     var item = cart[indexOfOldItem];
-
+    // If the item is found, increase the count and update the total price.
     item.count = parseInt(item.count) + 1;
     item.totalPrice = getTotalPrice(item);
   } else {
+    // Add the new item to the cart if it wasn't already exist.
     itemToAdd.totalPrice = getTotalPrice(itemToAdd);
-
     cart.push(itemToAdd);
   }
+
+  // Store the current to the local storage.
   localStorage.setItem("cartItems", JSON.stringify(cart));
 
   showNotification(itemToAdd.title);
+
   showAnimation(event);
 }
 
+// Gets the total count of the cart items.
 function getCartCount() {
   loadCartItemsFromStorage();
-
   totalCount = 0;
   cart.forEach((item) => {
     totalCount += item.count;
@@ -39,6 +46,7 @@ function getCartCount() {
   return totalCount;
 }
 
+// Animation of the flying circle
 function showAnimation(event) {
   const cart = document.querySelector(".cartCount");
   const circle = document.createElement("div");
@@ -114,6 +122,7 @@ function showNotification(itemTitle) {
   }
 }
 
+// Gets the saved cart items from local storage.
 function loadCartItemsFromStorage() {
   const data = localStorage.getItem("cartItems");
   cart = data ? JSON.parse(data) : [];
@@ -125,8 +134,9 @@ function deleteItemFromCart(index) {
   renderCartItems();
 }
 
+// Calculates the total price of an cart item by
+// multiplying the count and the price.
 function getTotalPrice(item) {
-  // var item = cart[index];
   totalPrice =
     parseFloat(item.price.substring(1, item.price.length)) *
     parseInt(item.count);
@@ -164,6 +174,9 @@ function increaseCount(index) {
   renderCartItems();
 }
 
+// Rerenders the whole list of cart items when an update happens.
+// For each item, insert a cart item in the items container.
+// Lastly start the animations on every rerender.
 function renderCartItems(isanimate = false) {
   updateCartButtonCount();
 
@@ -172,13 +185,16 @@ function renderCartItems(isanimate = false) {
     document.getElementsByClassName("cartItemsContainer")[0];
   if (cartItemsContainer == undefined) return;
   cartItemsContainer.innerHTML = "";
+
+  if (cart.length == 0) {
+    cartItemsContainer.innerHTML =
+      "<h3 style='font-weight:normal;'><center>Cart is empty.</center></h3>";
+  }
   cart.forEach((item, index) => {
     totalPrice += parseFloat(item.totalPrice);
 
     cartItemsContainer.insertAdjacentHTML(
       "beforeend",
-      // <input oninput="onCountChange(${index})" name="count" id="countInput${index}" class="countInput" type="number" value="${item.count}">
-
       `
     <div class="menuItemContainer" style="display: flex; ">
     <div class="menuItem  ${!isanimate ? "menuItemVisible" : ""}">
@@ -221,23 +237,27 @@ function renderCartItems(isanimate = false) {
       animate();
     }
   });
+
+  // Update the total cart price
   totalPrice = parseFloat(totalPrice).toFixed(2);
   document.getElementById(
     "totalPrice"
   ).innerText = `Total Price: $${totalPrice}`;
 }
 
-// <button onclick="deleteItemFromCart(${index})" class="linkButton" href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/></svg></button>
-
 function updateCartButtonCount() {
   document.getElementById("cartCount").innerText = getCartCount();
 }
 
+// Update the count number on page load.
 updateCartButtonCount();
 
-animate();
+// ANIMATIONS
+
+// To start animations on scroll.
 document.addEventListener("scroll", animate);
 
+// Addes the class that is responsible of the fade-in animation.
 function animate() {
   const items = document.querySelectorAll(".menuItem");
 
@@ -248,6 +268,7 @@ function animate() {
     }
   });
 }
+// Checks if the element is visible on screen to start the animation.
 
 function isInView(element) {
   const rect = element.getBoundingClientRect();

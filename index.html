@@ -18,13 +18,13 @@
     />
   </head>
   <body class="">
+    <!-- Theme Script -->
     <script src="./js/theme.js"></script>
 
     <!-- Header -->
     <header>
       <div class="header">
         <a class="textLogo" href="">
-          <!-- Count -->
           <!-- Logo -->
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -39,6 +39,8 @@
           </svg>
           <h1>Bistro Menu</h1>
         </a>
+
+        <!-- Theme Switch Button -->
         <div>
           <div class="themeSwitch" onclick="switchTheme()">
             <svg
@@ -54,10 +56,10 @@
             </svg>
           </div>
         </div>
-        <!-- Cart Button -->
+
+        <!-- Floating Cart Button -->
         <a class="cartButton" href="cart.html">
           <div id="cartCount" class="cartCount">0</div>
-
           <svg
             xmlns="http://www.w3.org/2000/svg"
             height="24px"
@@ -73,8 +75,7 @@
       </div>
     </header>
 
-    <!-- Main -->
-
+    <!-- Main Content-->
     <main>
       <div class="filters">
         <!-- Categories Filter Bar -->
@@ -89,6 +90,7 @@
           />
           <label class="categoryButton" for="all">All Items</label>
         </div>
+
         <!-- Search Bar -->
         <div class="search">
           <input
@@ -103,7 +105,7 @@
       </div>
       <br />
 
-      <!-- Menu Items -->
+      <!-- Items -->
       <div class="itemsContainer"></div>
 
       <div id="notificationContainer"></div>
