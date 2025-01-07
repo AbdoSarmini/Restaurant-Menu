@@ -21,7 +21,7 @@ function renderItems() {
 
   if (itemsToRender.length == 0) {
     itemsContainer.innerHTML =
-      "<h3 style='font-weight:normal;'><center>No items to show.</center></h3>";
+      "<h3 style='font-weight:normal;'>No items to show.</h3>";
   }
 
   itemsToRender.forEach((item) => {
