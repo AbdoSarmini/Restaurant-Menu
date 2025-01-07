@@ -13,8 +13,8 @@
   border-radius: 12px 0px 0px 12px;
   width: 175px;
   min-width: 175px;
-  height: 160px;
-  min-height: 160px;
+  height: 100px;
+  min-height: 100px;
   object-fit: cover;
 }
 
@@ -189,7 +189,7 @@
   .menuItem img {
     width: 95px;
     min-width: 95px;
-    height: 95px;
+    height: 80px;
     min-height: 100%;
   }
 
