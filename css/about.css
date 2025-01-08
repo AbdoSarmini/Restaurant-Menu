@@ -39,6 +39,20 @@ a:hover {
   opacity: 0.8;
 }
 
+body {
+  background-image: url(../images/pattern.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: rgba(255, 255, 255, 0.445);
+  background-blend-mode: lighten;
+}
+
+.linkButton svg {
+  fill: white;
+  margin-bottom: -7px;
+}
+
 /* Tablet */
 @media (max-width: 1024px) {
   .contentContainer {
@@ -66,5 +80,10 @@ a:hover {
   }
   iframe {
     filter: none;
+  }
+
+  .linkButton {
+    font-size: 12px;
+    padding: 8px;
   }
 }
