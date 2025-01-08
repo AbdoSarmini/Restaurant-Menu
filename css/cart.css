@@ -47,10 +47,18 @@
   height: 20px;
 }
 
-.menuItem .linkButton {
+.linkButton {
   background-color: #a02c2c;
   color: white;
-  padding: 4px;
+}
+
+.linkButton:disabled {
+  background-color: grey;
+  color: white;
+}
+
+.linkButton:disabled:hover {
+  transform: none;
 }
 
 .menuItem svg {

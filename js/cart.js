@@ -189,6 +189,7 @@ function renderCartItems(isanimate = false) {
   if (cart.length == 0) {
     cartItemsContainer.innerHTML =
       "<h3 style='font-weight:normal;'><center>Cart is empty.</center></h3>";
+    document.querySelector(".linkButton").disabled = true;
   }
   cart.forEach((item, index) => {
     totalPrice += parseFloat(item.totalPrice);
