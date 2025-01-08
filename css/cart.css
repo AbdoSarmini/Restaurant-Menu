@@ -160,11 +160,11 @@
   }
 
   .textLogo {
-    font-size: 10px;
+    font-size: 8px;
   }
 
   .textLogo svg,
-  .themeSwitch svg {
+  .iconButton svg {
     width: 25px;
     height: 25px;
   }

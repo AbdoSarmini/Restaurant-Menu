@@ -3,11 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Digital Restaurant Menu</title>
+    <title>Velvet Ember</title>
 
     <!-- Load  Gloabl CSS -->
     <link rel="stylesheet" href="./css/global.css" />
     <link rel="stylesheet" href="./css/responsive.css" />
+    <link rel="stylesheet" href="./css/modal.css" />
 
     <!-- Load Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -37,12 +38,51 @@
               d="m175-120-56-56 410-410q-18-42-5-95t57-95q53-53 118-62t106 32q41 41 32 106t-62 118q-42 44-95 57t-95-5l-50 50 304 304-56 56-304-302-304 302Zm118-342L173-582q-54-54-54-129t54-129l248 250-128 128Z"
             />
           </svg>
-          <h1>Restaurant Menu</h1>
+          <h1>Velvet Ember</h1>
         </a>
 
-        <!-- Theme Switch Button -->
-        <div>
-          <div class="themeSwitch" onclick="switchTheme()">
+        <!-- Header Icon Links -->
+        <div class="headerIcons">
+          <!-- QR Code -->
+
+          <div>
+            <div id="qrButton" class="iconButton" onclick="">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+                fill="#e8eaed"
+              >
+                <path
+                  d="M120-520v-320h320v320H120Zm80-80h160v-160H200v160Zm-80 480v-320h320v320H120Zm80-80h160v-160H200v160Zm320-320v-320h320v320H520Zm80-80h160v-160H600v160Zm160 480v-80h80v80h-80ZM520-360v-80h80v80h-80Zm80 80v-80h80v80h-80Zm-80 80v-80h80v80h-80Zm80 80v-80h80v80h-80Zm80-80v-80h80v80h-80Zm0-160v-80h80v80h-80Zm80 80v-80h80v80h-80Z"
+                />
+              </svg>
+            </div>
+          </div>
+
+          <!-- About Page -->
+
+          <div>
+            <a href="./about.html">
+              <div class="iconButton" onclick="">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="24px"
+                  viewBox="0 -960 960 960"
+                  width="24px"
+                  fill="#e8eaed"
+                >
+                  <path
+                    d="m600-120-240-84-186 72q-20 8-37-4.5T120-170v-560q0-13 7.5-23t20.5-15l212-72 240 84 186-72q20-8 37 4.5t17 33.5v560q0 13-7.5 23T812-192l-212 72Zm-40-98v-468l-160-56v468l160 56Zm80 0 120-40v-474l-120 46v468Zm-440-10 120-46v-468l-120 40v474Zm440-458v468-468Zm-320-56v468-468Z"
+                  />
+                </svg>
+              </div>
+            </a>
+          </div>
+
+          <!-- Theme Switch Buttons -->
+          <div class="iconButton themeSwitch" onclick="switchTheme()">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               height="24px"
@@ -115,5 +155,6 @@
     <script src="./data.js"></script>
     <script src="./js/cart.js"></script>
     <script src="./js/home.js"></script>
+    <script src="./js/modal.js"></script>
   </body>
 </html>
