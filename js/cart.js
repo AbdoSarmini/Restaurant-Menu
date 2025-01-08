@@ -252,6 +252,12 @@ function updateCartButtonCount() {
 // Update the count number on page load.
 updateCartButtonCount();
 
+function emptyCart() {
+  cart = [];
+  localStorage.setItem("cartItems", JSON.stringify(cart));
+  renderCartItems();
+}
+
 // ANIMATIONS
 
 // To start animations on scroll.
